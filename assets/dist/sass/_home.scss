@@ -1,0 +1,49 @@
+#love-wrapper{
+	background: $red;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	width: 100%;
+
+	.icon-menu2, .icon-close-modal{
+		color: $white;
+		display: block;
+		font-size: 2em;
+		position: absolute;
+		top: 40px;
+		left: 40px;
+		z-index: 999;
+		&:hover, &:focus, &:active {
+			color: $white-opaque;
+		}
+	}
+	
+	.icon-menu2.off{
+		display: none;
+	}
+
+	.icon-close-modal{
+		display: none;
+	}
+
+	.icon-close-modal.on{
+		display: block;
+	}
+
+	.flexslider{
+		display: inline-block;
+		margin-top: 100px;
+		max-width: 1000px;
+		width: 40%;
+		@include transition(all .2s ease-in-out);
+		@include breakpoint(desktop){
+			width: 40%;
+		}
+		@include breakpoint(tablet){
+			width: 70%;
+		}
+		@include breakpoint(mobile){
+			width: 90%;
+		}
+	}
+}
