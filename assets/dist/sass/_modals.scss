@@ -13,32 +13,81 @@
 	text-align: center;
 	h2{
 		color: $white;
-		font-family: $bold;
-		max-width: 1000px;
+		font-size: 3.4em;
+		font-family: $text;
+		@include breakpoint(mobile-landscape){
+			font-size: 2em;
+		}
 	}
 	p{
 		color: $white;
 		font-family: $text;
-		max-width: 1000px;
+		font-size: 1.1em;
 	}
-	ul{
-		width: 200px;
-		display: inline-block;
-		margin: 0;
-		li{
-			a{
-				display: block;
-				width: 100%;
-				height: 40px;
-				margin: 20px 0;
-				color: $white;
-				text-transform: uppercase;
-				font-size: 1.4em;
-				font-family: $bold;
+	p.underline{
+		display: block;
+		width: 50px;
+		margin: 30px auto 20px;
+		border-bottom: 5px solid $white;
+	}
+}
+#about{
+	background: $green;
+	background: $green-opaque;
+	overflow: auto;
+}
+#creatives{
+	background: $pink;
+	background: $pink-opaque;
+	padding-top: 80px;
+	h2{
+		margin-top: 0;
+	}
+	#creative-lovers{
+		width: 100%;
+		height: 60%;
+		overflow: auto;
+		ul{
+			width: 100%;
+			display: inline-block;
+			margin: 0;
+			li{
+				a{
+					display: block;
+					width: 100%;
+					height: 40px;
+					color: $white;
+					font-size: 1.5em;
+					font-family: $text;
+					&:hover, &:focus, &:active {
+						color: $white-opaque;
+					}
+				}
 			}
 		}
 	}
+	.icon-arrow-down{
+		color: $white;
+		font-size: 2em;
+		margin-top: 20px;
+		display: inline-block;
+		&:hover, &:focus, &:active {
+			color: $white-opaque;
+		}
+	}
 }
+#contact{
+	background: $blue;
+	background: $blue-opaque;
+	overflow: auto;
+	@include breakpoint(desktop-large){
+		padding-top: 80px;
+		h2{
+			margin-top: 0;
+		}
+	}
+}
+
 
 .love-modal.open{
 	display: table-cell;

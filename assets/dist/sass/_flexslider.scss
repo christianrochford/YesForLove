@@ -75,9 +75,6 @@ html[xmlns] .flexslider .slides {
  * DEFAULT THEME
  * ====================================================================================================================*/
 .flexslider {
-  margin: 0 0 60px;
-  background: #ffffff;
-  border: 10px solid $white;
   position: relative;
   zoom: 1;
 }
@@ -85,6 +82,7 @@ html[xmlns] .flexslider .slides {
   zoom: 1;
 }
 .flexslider .slides img {
+  border: 10px solid $white;
   height: auto;
 }
 .flex-viewport {
@@ -108,7 +106,7 @@ html[xmlns] .flexslider .slides {
   height: 100px;
   margin: -20px 0 0;
   position: absolute;
-  top: 40%;
+  top: 35%;
   z-index: 1;
   overflow: hidden;
   cursor: pointer;
@@ -118,23 +116,37 @@ html[xmlns] .flexslider .slides {
   -ms-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+  @include breakpoint(mobile-landscape){
+    width: 20px;
+    height: 50px;
+    top: 42%;
+  }
 }
 .flex-direction-nav a:before {
   font-family: 'yesforlove';
   font-size: 4em;
   display: inline-block;
-  content: '\e602';
+  content: '\e606';
   color: $white;
+  @include breakpoint(mobile-landscape){
+    font-size: 2em;
+  }
 }
 .flex-direction-nav a.flex-next:before {
-  content: '\e603';
+  content: '\e605';
 }
 .flex-direction-nav .flex-prev {
   left: -200px;
+  @include breakpoint(tablet){
+    left: -20%;
+  }
 }
 .flex-direction-nav .flex-next {
   right: -200px;
   text-align: right;
+  @include breakpoint(tablet){
+    right: -15%;
+  }
 }
 .flexslider:hover .flex-direction-nav .flex-prev {
   opacity: 1;
@@ -152,18 +164,4 @@ html[xmlns] .flexslider .slides {
   opacity: 0!important;
   filter: alpha(opacity=0);
   cursor: default;
-}
-
-/* ====================================================================================================================
- * RESPONSIVE
- * ====================================================================================================================*/
-@media screen and (max-width: 860px) {
-  .flex-direction-nav .flex-prev {
-    opacity: 1;
-    left: 10px;
-  }
-  .flex-direction-nav .flex-next {
-    opacity: 1;
-    right: 10px;
-  }
 }

@@ -10,7 +10,7 @@ $(document).ready(function() {
 
   // The Love Menu
   $('#love-menu').css({height: winH});
-  $('.icon-menu2').click(function(e){
+  $('.icon-menu').click(function(e){
   	e.preventDefault();
   	$(this).addClass('off');
   	$('.icon-close-modal').addClass('on');
@@ -20,7 +20,7 @@ $(document).ready(function() {
   $('.icon-close-modal').click(function(e){
   	e.preventDefault();
   	$(this).removeClass('on');
-  	$('.icon-menu2').removeClass('off');
+  	$('.icon-menu').removeClass('off');
   	$('#love-menu').removeClass('on');
     $('.love-modal').removeClass('open');
   });
@@ -31,8 +31,26 @@ $(document).ready(function() {
     $('.love-modal').removeClass('open');
     $('#love-menu').removeClass('on');
     $('#' + target).addClass('open');
-    $('.icon-menu2').removeClass('off');
-    $('.icon-close-modal').removeClass('on');
+  });
+
+  var scrolled = 0;
+  $(".icon-arrow-down").click(function(){
+      scrolled = scrolled+300;
+        $("#creative-lovers").animate({
+          scrollTop:  scrolled
+     });
+   });
+
+  // Social shares
+  $('.icon-share').click(function(e){
+    e.preventDefault();
+    if($(this).hasClass('open')){
+      $(this).removeClass('open');
+      $('#love-links, #love-triangle').removeClass('on');
+    } else {
+      $(this).addClass('open');
+      $('#love-links, #love-triangle').addClass('on');
+    }
   });
 
 });
