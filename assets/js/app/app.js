@@ -33,10 +33,17 @@ $(document).ready(function() {
     $('#' + target).addClass('open');
   });
 
+  // Nice scroll
+  $('#creative-lovers, #about, #contact').niceScroll({
+    cursorcolor: '#fff',
+    cursorborder: 'none',
+    cursorborderradius: '0'
+  });
+
   var scrolled = 0;
-  $(".icon-arrow-down").click(function(){
+  $('.icon-arrow-down').click(function(){
       scrolled = scrolled+300;
-        $("#creative-lovers").animate({
+        $('#creative-lovers').animate({
           scrollTop:  scrolled
      });
    });
