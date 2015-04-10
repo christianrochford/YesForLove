@@ -19,9 +19,20 @@
 		top: 10px;
 		left: 42px;
 		@include transition(all .2s ease-in-out);
+		@include breakpoint(tablet){
+			border-top: 10px solid transparent;
+			border-bottom: 10px solid transparent;
+			border-left: 10px solid transparent;
+			border-right: 0 solid transparent;
+			left: -12px;
+		}
 	}
 	#love-triangle.on{
 		border-right: 10px solid $white;
+		@include breakpoint(tablet){
+			border-right: none;
+			border-left: 10px solid $white;
+		}
 	}
 	#love-links{
 		background: transparent;
@@ -33,6 +44,9 @@
 		top: 0;
 		left: 32px;
 		overflow: hidden;
+		@include breakpoint(tablet){
+			left: -163px;
+		}
 		@include transition(all .2s ease-in-out);
 		.love-link{
 			float: left;

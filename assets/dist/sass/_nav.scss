@@ -28,6 +28,7 @@
 					font-family: $text;
 					@include breakpoint(mobile-landscape){
 						font-size: 2em;
+						margin: 0;
 					}
 				}
 			}
