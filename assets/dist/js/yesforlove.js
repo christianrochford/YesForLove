@@ -11195,6 +11195,13 @@ var outdatedBrowser = function(t) {
   	$('#love-menu').removeClass('on');
     $('.love-modal').removeClass('open');
   });
+  $('.icon-logo').click(function(e){
+    e.preventDefault();
+    $('.icon-menu').removeClass('off');
+    $('.icon-close-modal').removeClass('on');
+    $('#love-menu').removeClass('on');
+    $('.love-modal').removeClass('open');
+  });
 
   $('.nav-link').click(function(e){
     var target = $(this).attr('href');
@@ -11220,16 +11227,30 @@ var outdatedBrowser = function(t) {
    });
 
   // Social shares
-  $('.icon-share').click(function(e){
-    e.preventDefault();
-    if($(this).hasClass('open')){
-      $(this).removeClass('open');
-      $('#love-links, #love-triangle').removeClass('on');
-    } else {
-      $(this).addClass('open');
-      $('#love-links, #love-triangle').addClass('on');
-    }
-  });
+  if(Modernizr.touch){
+    $('.icon-share').click(function(e){
+      e.preventDefault();
+      if($(this).hasClass('open')){
+        $(this).removeClass('open');
+        $('#love-links, #love-triangle').removeClass('on');
+      } else {
+        $(this).addClass('open');
+        $('#love-links, #love-triangle').addClass('on');
+      }
+    });
+  } else {
+    $('.icon-share').hover(
+      function(){
+        $(this).addClass('on');
+        $('#love-links, #love-triangle').addClass('on');
+      },
+      function(){
+        $(this).removeClass('on');
+        $('#love-links, #love-triangle').removeClass('on');
+      }
+    );
+  }
+  
 
 });
 

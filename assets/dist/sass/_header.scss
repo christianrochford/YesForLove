@@ -1,0 +1,49 @@
+#love-header{
+	width: 100%;
+	height: 100px;
+	max-width: 1400px;
+	margin: 0 auto;
+	position: relative;
+	z-index: 999;
+	@include transition(all .2s ease-in-out);
+	.icon-logo{
+		float: left;
+		color: $white;
+		font-size: 3em;
+		margin: 30px 0 0 30px;
+		@include transition(all .2s ease-in-out);
+		&:hover, &:focus, &:active {
+			color: $white-opaque;
+		}
+		@include breakpoint(mobile-landscape){
+			font-size: 2em;
+			margin: 20px 0 0 20px;
+		}
+	}
+	.icon-menu, .icon-close-modal{
+		color: $white;
+		display: block;
+		font-size: 2em;
+		float: right;
+		margin: 40px 40px 0 0;
+		&:hover, &:focus, &:active {
+			color: $white-opaque;
+		}
+		
+		@include breakpoint(mobile-landscape){
+			margin: 20px 20px 0 0;
+		}
+	}
+	
+	.icon-menu.off{
+		display: none;
+	}
+
+	.icon-close-modal{
+		display: none;
+	}
+
+	.icon-close-modal.on{
+		display: block;
+	}
+}
