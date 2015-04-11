@@ -1,6 +1,6 @@
-/images
-/system
-/themes
+/assets/dist/images
+/assets/dist/system
+/assets/dist/themes
 admin.php
 index.php
 node_modules
