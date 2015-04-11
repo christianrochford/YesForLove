@@ -1,0 +1,66 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Yes For Love</title>
+<link rel="stylesheet" href="{site_url}css/yesforlove.css">
+<!-- /build -->
+<script src="{site_url}js/modernizr.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+
+<div id="love-wrapper" style="background-color: {if '{segment_1}' == 'about'}#26D34F{if:elseif '{segment_1}' == 'creatives'}#F948A5{if:elseif '{segment_1}' == 'contact'}#2961FF{/if};">
+	<div id="love-header">
+		<a href="/" class="icon-logo" aria-hidden="true"></a>
+		<a href="#" class="icon-menu" aria-hidden="true"></a>
+		<a href="#" class="icon-close-modal" aria-hidden="true"></a>
+	</div>
+	<div class="love-content" {if '{segment_1}' == 'about'}id="about"{if:elseif '{segment_1}' == 'creatives'}id="creatives"{if:elseif '{segment_1}' == 'contact'}id="contact"{/if}>
+		{if '{segment_1}' == 'about'}
+		{exp:channel:entries channel="about" limit="1" dynamic="no" disable="{gv_disable_all}"}
+		<h2>{title}</h2><p class="underline"></p>
+		{about_text}
+		{/exp:channel:entries}
+		{if:elseif '{segment_1}' == 'creatives'}
+		<h2>Creatives</h2><p class="underline"></p>
+		<div id="creative-lovers">
+			<ul>
+			{exp:channel:entries channel="designer" limit="9999" dynamic="no" disable="{gv_disable_all}"}
+				<li><a href="{page_url}">{title}</a></li>
+			{/exp:channel:entries}
+			</ul>
+		</div>
+		{if:elseif '{segment_1}' == 'contact'}
+		<h2>Contact</h2><p class="underline"></p>
+		{exp:freeform:form form_name="contact" required="name|email|message" return="site/thanks" inline_errors="yes"}
+			<input type="text" name="name" id="name" placeholder="Name" {if freeform:error:name}style="border-color:#e60039;"{/if} novalidate="novalidate">
+			<input type="email" name="email" id="email" placeholder="Email" {if freeform:error:email}style="border-color:#e60039;"{/if} novalidate="novalidate">
+			<textarea name="message" id="message" placeholder="Message" {if freeform:error:message}style="border:2px solid #e60039;"{/if} novalidate="novalidate"></textarea>
+			<input type="submit" value="Send">
+		{/exp:freeform:form}
+		{/if}
+	</div>
+</div>
+
+<div id="love-menu">
+	<nav>
+		<ul>
+			<li><a href="{site_url}about">About</a></li>
+			<li><a href="{site_url}creatives">Creatives</a></li>
+			<li><a href="{site_url}contact">Contact</a></li>
+			<li><a href="http://www.yesequality.ie/voting-info/" target="_blank">Register to Vote</a></li>
+			<li><a href="https://www.yesequality.ie/" target="_blank">Learn More</a></li>
+		</ul>
+	</nav>
+</div>
+
+
+<script src="{site_url}js/yesforlove.min.js"></script>
+</body>
+</html>
