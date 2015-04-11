@@ -1,4 +1,4 @@
-.love-modal{
+.love-modal, .love-content{
 	display: none;
 	position: absolute;
 	top: 0;
@@ -17,6 +17,7 @@
 		font-family: $text;
 		@include breakpoint(mobile-landscape){
 			font-size: 2em;
+			margin-top: 0;
 		}
 	}
 	p{
@@ -24,7 +25,7 @@
 		font-family: $text;
 		font-size: 1.1em;
 		max-width: 800px;
-		margin: 0 auto;
+		margin: 0 auto 40px;
 	}
 	p.underline{
 		display: block;
@@ -32,6 +33,9 @@
 		margin: 30px auto 20px;
 		border-bottom: 5px solid $white;
 	}
+}
+.love-content{
+	display: block;
 }
 #about{
 	background: $green;
