@@ -11172,7 +11172,6 @@ var outdatedBrowser = function(t) {
 ;$(document).ready(function() {
 
   var winH = $(window).height();
-  var sliderM = ($(window).height()-($('.flexslider').height()+20))/2;
 
   // The Love Wrapper
   $('#love-wrapper').css({height: winH});
@@ -11245,27 +11244,37 @@ var outdatedBrowser = function(t) {
     );
   }
 
-  // Image Position
-  if(($('.flexslider').height() + 20) < ($(window).height() - $('#love-header').height())){
-    $('.flexslider').css({marginTop: ((($(window).height() - $('#love-header').height())-($('.flexslider').height()+20))/2)});
+});
+
+$(window).load(function(){
+
+  var winH = $(window).height();
+
+  // Image position
+  if($('.yes').height() < $(window).height()){
+    $('.yes').css({paddingTop: (($(window).height() - $('.yes').height())/2)});  
+  } else {
+    $('.yes').css({paddingTop: (($(window).height() - $('.yes').height())/2)});
   }
+  
 
 });
 
 $(window).resize(function(){
 
   var winH = $(window).height();
-  var sliderM = ($(window).height()-($('.flexslider').height()+20))/2;
 
   // The Love Wrapper
   $('#love-wrapper').css({height: winH});
 
+  // Image position
+  if($('.yes').height() < $(window).height()){
+    $('.yes').css({paddingTop: (($(window).height() - $('.yes').height())/2)});  
+  } else {
+    $('.yes').css({paddingTop: (($(window).height() - $('.yes').height())/2)});
+  }
+
   // The Love Menu
   $('#love-menu').css({height: winH});
-
-  // Image Position
-  if(($('.flexslider').height() + 20) < ($(window).height() - $('#love-header').height())){
-    $('.flexslider').css({marginTop: ((($(window).height() - $('#love-header').height())-($('.flexslider').height()+20))/2)});
-  }
 
 });

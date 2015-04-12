@@ -26,6 +26,10 @@
 					color: $white;
 					font-size: 3.4em;
 					font-family: $text;
+					line-height: 1em;
+					&:hover, &:focus, &:active {
+						color: $white-opaque;
+					}	
 					@include breakpoint(mobile-landscape){
 						font-size: 2em;
 						margin: 0;

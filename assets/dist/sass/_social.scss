@@ -45,13 +45,14 @@
 		left: 0;
 		overflow: hidden;
 		@include breakpoint(tablet){
-			left: -195px;
+			left: -194px;
 		}
 		@include transition(all .2s ease-in-out);
 		.love-link{
 			float: left;
 			display: inline-block;
 			width: 30px;
+			padding: 0;
 			a{
 				display: block;
 				width: 30px;

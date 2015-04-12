@@ -105,8 +105,8 @@ html[xmlns] .flexslider .slides {
   height: 100px;
   margin: -20px 0 0;
   position: absolute;
-  top: 35%;
-  z-index: 1;
+  top: 40%;
+  z-index: 3;
   overflow: hidden;
   cursor: pointer;
   color: $white;
@@ -118,7 +118,13 @@ html[xmlns] .flexslider .slides {
   @include breakpoint(mobile-landscape){
     width: 20px;
     height: 50px;
-    top: 20%;
+    top: 40%;
+  }
+  @include breakpoint(mobile-landscape){
+    top: 30%;
+  }
+  @include breakpoint(mobile){
+    top: 25%;
   }
 }
 .flex-direction-nav a:before {
@@ -135,16 +141,16 @@ html[xmlns] .flexslider .slides {
   content: '\e605';
 }
 .flex-direction-nav .flex-prev {
-  left: -200px;
+  left: 10%;
   @include breakpoint(tablet){
-    left: -20%;
+    left: 20px;
   }
 }
 .flex-direction-nav .flex-next {
-  right: -200px;
+  right: 10%;
   text-align: right;
   @include breakpoint(tablet){
-    right: -15%;
+    right: 20px;
   }
 }
 .flexslider:hover .flex-direction-nav .flex-prev {

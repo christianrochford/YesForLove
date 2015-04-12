@@ -7,9 +7,29 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Yes For Love</title>
+<title>Thanks | Yes For Love</title>
+<meta name="description" content="Thanks for getting in touch. Support the YES vote, download one of our 'YES' images and use it as your profile picture.">
 <link rel="stylesheet" href="{site_url}css/yesforlove.css">
-<!-- /build -->
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<!--Open Graph-->
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://yes-for-love.com/">
+<meta property="og:site_name" content="Postroch">
+{exp:channel:entries channel="designer" limit="1" dynamic="no" orderby="random" disable="{gv_disable_all}"}
+<meta property="og:image" content="{yes_image}">
+{/exp:channel:entries}
 <script src="{site_url}js/modernizr.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
@@ -17,18 +37,20 @@
 
 <div id="love-wrapper" style="background-color:#EC1C24;">
 	<div id="love-header">
-		<a href="/" class="icon-logo" aria-hidden="true"></a>
-		<a href="#" class="icon-menu" aria-hidden="true"></a>
-		<a href="#" class="icon-close-modal" aria-hidden="true"></a>
+		<div id="header-wrap">
+			<a href="/" class="icon-logo" aria-hidden="true"></a>
+			<a href="#" class="icon-menu" aria-hidden="true"></a>
+			<a href="#" class="icon-close-modal" aria-hidden="true"></a>
+		</div>
 	</div>
 	<div class="love-content" style="background-color:#EC1C24;">
 		<h2>Thanks for getting in touch</h2>
 		<h3>Spread the LOVE and share</h3>
 		<ul id="love-links">
-  		  <li class="love-link"><a href="#" class="icon-facebook" aria-hidden="true"></a></li>
-  		  <li class="love-link"><a href="#" class="icon-twitter" aria-hidden="true"></a></li>
-  		  <li class="love-link"><a href="#" class="icon-googleplus" aria-hidden="true"></a></li>
-  		  <li class="love-link"><a href="mailto:" class="icon-mail" aria-hidden="true"></a></li>
+  		  <li class="love-link"><a href="https://www.facebook.com/sharer/sharer.php?u={site_url}" class="icon-facebook" aria-hidden="true" target="_blank"></a></li>
+  		  <li class="love-link"><a href="https://twitter.com/home?status=YES%20for%20love%20{site_url}" class="icon-twitter" aria-hidden="true" target="_blank"></a></li>
+  		  <li class="love-link"><a href="https://plus.google.com/share?url={site_url}" class="icon-googleplus" aria-hidden="true" target="_blank"></a></li>
+  		  <li class="love-link"><a href="mailto:?&subject=YES for Love&body=I'm%20gonna%20vote%20YES%20for%20Love%20in%20the%20referendum%20on%20Marriage%20Equality%20on%20May%2022nd!%0A{site_url}" class="icon-mail" aria-hidden="true"></a></li>
   	    </ul>
 	</div>
 </div>
@@ -56,7 +78,7 @@
 	<h2>Creatives</h2><p class="underline"></p>
 	<div id="creative-lovers">
 		<ul>
-		{exp:channel:entries channel="designer" limit="9999" dynamic="no" disable="{gv_disable_all}"}
+		{exp:channel:entries channel="designer" limit="9999" orderby="title" dynamic="no" disable="{gv_disable_all}"}
 			<li><a href="{page_url}">{title}</a></li>
 		{/exp:channel:entries}
 		</ul>

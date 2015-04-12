@@ -8,8 +8,29 @@
 <head>
 <meta charset="UTF-8">
 <title>Yes For Love</title>
+<meta name="description" content="Ireland votes for marriage equality on May 22nd. Support the YES vote, download one of our 'YES' images and use it as your profile picture.">
+<meta>
 <link rel="stylesheet" href="{site_url}css/yesforlove.css">
-<!-- /build -->
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<!--Open Graph-->
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://yes-for-love.com/">
+<meta property="og:site_name" content="Postroch">
+{exp:channel:entries channel="designer" limit="1" dynamic="no" orderby="random" disable="{gv_disable_all}"}
+<meta property="og:image" content="{yes_image}">
+{/exp:channel:entries}
 <script src="{site_url}js/modernizr.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
@@ -17,9 +38,11 @@
 
 <div id="love-wrapper" style="background-color: {if '{segment_1}' == 'about'}#26D34F{if:elseif '{segment_1}' == 'creatives'}#F948A5{if:elseif '{segment_1}' == 'contact'}#2961FF{/if};">
 	<div id="love-header">
-		<a href="/" class="icon-logo" aria-hidden="true"></a>
-		<a href="#" class="icon-menu" aria-hidden="true"></a>
-		<a href="#" class="icon-close-modal" aria-hidden="true"></a>
+		<div id="header-wrap">
+			<a href="/" class="icon-logo" aria-hidden="true"></a>
+			<a href="#" class="icon-menu" aria-hidden="true"></a>
+			<a href="#" class="icon-close-modal" aria-hidden="true"></a>
+		</div>
 	</div>
 	<div class="love-content" {if '{segment_1}' == 'about'}id="about"{if:elseif '{segment_1}' == 'creatives'}id="creatives"{if:elseif '{segment_1}' == 'contact'}id="contact"{/if}>
 		{if '{segment_1}' == 'about'}
