@@ -10,7 +10,7 @@
 {exp:channel:entries channel="designer" limit="1" url_title="{segment_1}" dynamic="no" disable="{gv_disable_all}"}
 <title>{title} | Yes For Love</title>
 <meta name="description" content="Ireland votes for marriage equality on May 22nd. Support the YES vote, download the {title} 'YES' image and use it as your profile picture.">
-{exp:channel:entries
+{/exp:channel:entries}
 <link rel="stylesheet" href="{site_url}css/yesforlove.css">
 <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
@@ -141,7 +141,7 @@
 	<h2>Creatives</h2><p class="underline"></p>
 	<div id="creative-lovers">
 		<ul>
-		{exp:channel:entries channel="designer" limit="9999" dynamic="no" orderby="title" disable="{gv_disable_all}"}
+		{exp:channel:entries channel="designer" limit="9999" dynamic="no" orderby="title" sort="asc" disable="{gv_disable_all}"}
 			<li><a href="{page_url}">{title}</a></li>
 		{/exp:channel:entries}
 		</ul>
@@ -160,5 +160,15 @@
 </div>
 
 <script src="{site_url}js/yesforlove.min.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61840991-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 </body>
 </html>

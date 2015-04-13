@@ -26,6 +26,10 @@
 		font-size: 1.1em;
 		max-width: 800px;
 		margin: 0 auto 40px;
+		a{
+			color: $white;
+			text-decoration: underline;
+		}
 	}
 	p.underline{
 		display: block;
