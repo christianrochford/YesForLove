@@ -1,0 +1,34 @@
+
+	  {exp:channel:entries channel="designer" limit="1" disable="{gv_disable_all}"}
+		<li class="yes" style="background-color:#{background_color};">
+	    	<div class="yes-wrap">
+		    	<div class="top-shadow">
+		    		<div class="left-shadow"></div>
+		    		<div class="right-shadow"></div>
+		    	</div>
+	    		<img src="{yes_image}" alt="Yes by {title}">
+	    		<div class="bottom-shadow">
+		    		<div class="left-shadow"></div>
+		    		<div class="right-shadow"></div>
+		    	</div>
+		    	<div class="icon-wrap">
+			      	<a href="{yes_image}" class="icon-download" aria-hidden="true" target="_blank"></a>
+				      <div id="love-link-wrap">
+				      	<div class="icon-share" aria-hidden="true">
+				      	  <span id="love-triangle"></span>
+					      <ul id="love-links">
+				      		<li class="love-link"><a href="https://www.facebook.com/sharer/sharer.php?u={page_url}" class="icon-facebook" aria-hidden="true" style="color:#{background_color};" target="_blank"></a></li>
+				      		<li class="love-link"><a href="https://twitter.com/home?status=YES%20for%20love%20{page_url}" class="icon-twitter" aria-hidden="true" style="color:#{background_color};" target="_blank"></a></li>
+				      		<li class="love-link"><a href="https://plus.google.com/share?url={page_url}" class="icon-googleplus" aria-hidden="true" style="color:#{background_color};" target="_blank"></a></li>
+				      		<li class="love-link"><a href="mailto:?&subject=YES for Love&body=I'm%20gonna%20vote%20YES%20for%20Love%20in%20the%20referendum%20on%20Marriage%20Equality%20on%20May%2022nd!%0A{page_url}" class="icon-mail" aria-hidden="true" style="color:#{background_color};"></a></li>
+				      	  </ul>
+				      	</div>
+				      </div>
+			      </div>
+	    	</div>
+	      <div class="love-creator">
+	      	<p class="details"><span class="title">'{if image_title}{image_title}{if:else}YES{/if}'</span> By {if website}<a href="{website}" target="_blank">{/if}{title}{if website}</a>{/if}</p>
+	      	<p class="vote-for-love">Vote Yes in the marriage equality bill on May 22nd</p>
+	      </div>
+	    </li>
+	    {/exp:channel:entries}

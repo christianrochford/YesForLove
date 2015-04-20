@@ -7,8 +7,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Yes For Love</title>
-<meta name="description" content="Ireland votes for marriage equality on May 22nd. Support the YES vote, download one of our 'YES' images and use it as your profile picture.">
+{exp:channel:entries channel="designer" limit="1" url_title="{segment_1}" dynamic="no" disable="{gv_disable_all}"}
+<title>{title} | Yes For Love</title>
+<meta name="description" content="Ireland votes for marriage equality on May 22nd. Support the YES vote, download the {title} 'YES' image and use it as your profile picture.">
+{/exp:channel:entries}
 <link rel="stylesheet" href="{site_url}css/yesforlove.css">
 <link rel="apple-touch-icon" sizes="57x57" href="http://yes-for-love.com/apple-touch-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="114x114" href="http://yes-for-love.com/apple-touch-icon-114x114.png">
@@ -36,9 +38,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
-<div id="loading">
-	<img src="{site_url}/img/loading-bubbles.svg" alt="Loading icon" />
-</div>
+
 <div id="love-wrapper">
 	<div id="love-header">
 		<div id="header-wrap">
@@ -49,7 +49,42 @@
 	</div>
 	<div class="flexslider">
 	  <ul class="slides">
-	  {exp:channel:entries channel="designer" limit="999" dynamic="no" orderby="random" disable="{gv_disable_all}"}
+	  {exp:channel:entries channel="designer" limit="1" disable="{gv_disable_all}"}
+		<li class="yes" style="background-color:#{background_color};">
+	    	<div class="yes-wrap">
+		    	<div class="top-shadow">
+		    		<div class="left-shadow"></div>
+		    		<div class="right-shadow"></div>
+		    	</div>
+	    		{exp:ce_img:pair src="{yes_image}" width="500" height="500"}
+				<img src="{made}" alt="Yes by {title}" width="500" height="500" />
+				{/exp:ce_img:pair}
+	    		<div class="bottom-shadow">
+		    		<div class="left-shadow"></div>
+		    		<div class="right-shadow"></div>
+		    	</div>
+		    	<div class="icon-wrap">
+			      	<a href="{yes_image}" class="icon-download" aria-hidden="true" target="_blank"></a>
+				      <div id="love-link-wrap">
+				      	<div class="icon-share" aria-hidden="true">
+				      	  <span id="love-triangle"></span>
+					      <ul id="love-links">
+				      		<li class="love-link"><a href="https://www.facebook.com/sharer/sharer.php?u={page_url}" class="icon-facebook" aria-hidden="true" style="color:#{background_color};" target="_blank"></a></li>
+				      		<li class="love-link"><a href="https://twitter.com/home?status=YES%20for%20love%20{page_url}" class="icon-twitter" aria-hidden="true" style="color:#{background_color};" target="_blank"></a></li>
+				      		<li class="love-link"><a href="https://plus.google.com/share?url={page_url}" class="icon-googleplus" aria-hidden="true" style="color:#{background_color};" target="_blank"></a></li>
+				      		<li class="love-link"><a href="mailto:?&subject=YES for Love&body=I'm%20gonna%20vote%20YES%20for%20Love%20in%20the%20referendum%20on%20Marriage%20Equality%20on%20May%2022nd!%0A{page_url}" class="icon-mail" aria-hidden="true" style="color:#{background_color};"></a></li>
+				      	  </ul>
+				      	</div>
+				      </div>
+			      </div>
+	    	</div>
+	      <div class="love-creator">
+	      	<p class="details"><span class="title">'{if image_title}{image_title}{if:else}YES{/if}'</span> By {if website}<a href="{website}" target="_blank">{/if}{title}{if website}</a>{/if}</p>
+	      	<p class="vote-for-love">Vote Yes in the marriage equality bill on May 22nd</p>
+	      </div>
+	    </li>
+	    {/exp:channel:entries}
+	    {exp:channel:entries channel="designer" limit="30" dynamic="no" orderby="random" url_title="not {segment_1}" disable="{gv_disable_all}"}
 		<li class="yes" style="background-color:#{background_color};">
 	    	<div class="yes-wrap">
 		    	<div class="top-shadow">
@@ -132,17 +167,6 @@
 </div>
 
 <script src="{site_url}js/yesforlove.min.js"></script>
-<script>
-	$(document).ready(function(){
-		$('.icon-logo').click(function(e){
-	      e.preventDefault();
-	      $('.icon-menu').removeClass('off');
-	      $('.icon-close-modal').removeClass('on');
-	      $('#love-menu').removeClass('on');
-	      $('.love-modal').removeClass('open');
-	    });
-	});
-</script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

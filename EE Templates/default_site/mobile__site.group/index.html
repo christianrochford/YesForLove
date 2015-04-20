@@ -7,8 +7,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Thanks | Yes For Love</title>
-<meta name="description" content="Thanks for getting in touch. Support the YES vote, download one of our 'YES' images and use it as your profile picture.">
+<title>Yes For Love</title>
+<meta name="description" content="Ireland votes for marriage equality on May 22nd. Support the YES vote, download one of our 'YES' images and use it as your profile picture.">
 <link rel="stylesheet" href="{site_url}css/yesforlove.css">
 <link rel="apple-touch-icon" sizes="57x57" href="http://yes-for-love.com/apple-touch-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="114x114" href="http://yes-for-love.com/apple-touch-icon-114x114.png">
@@ -36,8 +36,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
-
-<div id="love-wrapper" style="background-color:#EC1C24;">
+<div id="loading">
+	<img src="{site_url}/img/loading-bubbles.svg" alt="Loading icon" />
+</div>
+<div id="love-wrapper">
 	<div id="love-header">
 		<div id="header-wrap">
 			<a href="/" class="icon-logo" aria-hidden="true"></a>
@@ -45,16 +47,46 @@
 			<a href="#" class="icon-close-modal" aria-hidden="true"></a>
 		</div>
 	</div>
-	<div class="love-content" style="background-color:#EC1C24;">
-		<h2>Thanks for getting in touch</h2>
-		<h3>Spread the LOVE and share</h3>
-		<ul id="love-links">
-  		  <li class="love-link"><a href="https://www.facebook.com/sharer/sharer.php?u={site_url}" class="icon-facebook" aria-hidden="true" target="_blank"></a></li>
-  		  <li class="love-link"><a href="https://twitter.com/home?status=YES%20for%20love%20{site_url}" class="icon-twitter" aria-hidden="true" target="_blank"></a></li>
-  		  <li class="love-link"><a href="https://plus.google.com/share?url={site_url}" class="icon-googleplus" aria-hidden="true" target="_blank"></a></li>
-  		  <li class="love-link"><a href="mailto:?&subject=YES for Love&body=I'm%20gonna%20vote%20YES%20for%20Love%20in%20the%20referendum%20on%20Marriage%20Equality%20on%20May%2022nd!%0A{site_url}" class="icon-mail" aria-hidden="true"></a></li>
-  	    </ul>
+	<div class="flexslider">
+	  <ul class="slides">
+	  {exp:channel:entries channel="designer" limit="30" dynamic="no" orderby="random" disable="{gv_disable_all}"}
+		<li class="yes" style="background-color:#{background_color};">
+	    	<div class="yes-wrap">
+		    	<div class="top-shadow">
+		    		<div class="left-shadow"></div>
+		    		<div class="right-shadow"></div>
+		    	</div>
+	    		{exp:ce_img:pair src="{yes_image}" width="500" height="500"}
+				<img src="{made}" alt="Yes by {title}" width="500" height="500" />
+				{/exp:ce_img:pair}
+	    		<div class="bottom-shadow">
+		    		<div class="left-shadow"></div>
+		    		<div class="right-shadow"></div>
+		    	</div>
+		    	<div class="icon-wrap">
+			      	<a href="{yes_image}" class="icon-download" aria-hidden="true" target="_blank"></a>
+				      <div id="love-link-wrap">
+				      	<div class="icon-share" aria-hidden="true">
+				      	  <span id="love-triangle"></span>
+					      <ul id="love-links">
+				      		<li class="love-link"><a href="https://www.facebook.com/sharer/sharer.php?u={page_url}" class="icon-facebook" aria-hidden="true" style="color:#{background_color};" target="_blank"></a></li>
+				      		<li class="love-link"><a href="https://twitter.com/home?status=YES%20for%20love%20{page_url}" class="icon-twitter" aria-hidden="true" style="color:#{background_color};" target="_blank"></a></li>
+				      		<li class="love-link"><a href="https://plus.google.com/share?url={page_url}" class="icon-googleplus" aria-hidden="true" style="color:#{background_color};" target="_blank"></a></li>
+				      		<li class="love-link"><a href="mailto:?&subject=YES for Love&body=I'm%20gonna%20vote%20YES%20for%20Love%20in%20the%20referendum%20on%20Marriage%20Equality%20on%20May%2022nd!%0A{page_url}" class="icon-mail" aria-hidden="true" style="color:#{background_color};"></a></li>
+				      	  </ul>
+				      	</div>
+				      </div>
+			      </div>
+	    	</div>
+	      <div class="love-creator">
+	      	<p class="details"><span class="title">'{if image_title}{image_title}{if:else}YES{/if}'</span> By {if website}<a href="{website}" target="_blank">{/if}{title}{if website}</a>{/if}</p>
+	      	<p class="vote-for-love">Vote Yes in the marriage equality bill on May 22nd</p>
+	      </div>
+	    </li>
+	    {/exp:channel:entries}
+	  </ul>
 	</div>
+	<p id="vote-for-love">Vote Yes in the marriage equality bill on May 22nd</p>
 </div>
 
 <div id="love-menu">
@@ -80,7 +112,7 @@
 	<h2>Creatives</h2><p class="underline"></p>
 	<div id="creative-lovers">
 		<ul>
-		{exp:channel:entries channel="designer" limit="9999" orderby="title" sort="asc" dynamic="no" disable="{gv_disable_all}"}
+		{exp:channel:entries channel="designer" limit="9999" dynamic="no" orderby="title" sort="asc" disable="{gv_disable_all}"}
 			<li><a href="{page_url}">{title}</a></li>
 		{/exp:channel:entries}
 		</ul>
@@ -90,6 +122,7 @@
 
 <div id="contact" class="love-modal">
 	<h2>Contact</h2><p class="underline"></p>
+	<p>Sadly we’re currently not accepting open submissions. If you have any feedback or would just like to say hi we’d be love to hear from you!</p>
 	{exp:freeform:form form_name="contact" required="name|email|message" return="site/thanks" inline_errors="yes"}
 		<input type="text" name="name" id="name" placeholder="Name" {if freeform:error:name}style="border-color:#e60039;"{/if} novalidate="novalidate">
 		<input type="email" name="email" id="email" placeholder="Email" {if freeform:error:email}style="border-color:#e60039;"{/if} novalidate="novalidate">
@@ -99,6 +132,17 @@
 </div>
 
 <script src="{site_url}js/yesforlove.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('.icon-logo').click(function(e){
+	      e.preventDefault();
+	      $('.icon-menu').removeClass('off');
+	      $('.icon-close-modal').removeClass('on');
+	      $('#love-menu').removeClass('on');
+	      $('.love-modal').removeClass('open');
+	    });
+	});
+</script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

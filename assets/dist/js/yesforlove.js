@@ -11176,9 +11176,6 @@ var outdatedBrowser = function(t) {
   // The Love Wrapper
   $('#love-wrapper').css({height: winH});
 
-  // The Love Slider
-  $('.flexslider').flexslider();
-
   // The Love Menu
   $('#love-menu').css({height: winH});
   $('.icon-menu').click(function(e){
@@ -11247,6 +11244,11 @@ var outdatedBrowser = function(t) {
 });
 
 $(window).load(function(){
+
+  $('#loading').hide();
+    // The Love Slider
+    $('.flexslider, .ajax-slider').fadeIn(200);
+  $('.flexslider').flexslider();
 
   var winH = $(window).height();
 

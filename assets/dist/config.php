@@ -21,9 +21,12 @@ $config['is_system_on'] = 'y';
 $config['allow_extensions'] = 'y';
 $config['cookie_prefix'] = '';
 $config['cookie_httponly'] = 'y';
+$config['protect_javascript'] = 'n';
 
+$config['index_page'] = '';
 
 // END EE config items
+
 
 /*
 |--------------------------------------------------------------------------
