@@ -65,6 +65,16 @@
 					}
 				}
 			}
+			.icon-refresh{
+				color: rgba(0, 0, 0, 0.2);
+				position: absolute;
+				left: 15px;
+				bottom: 58px;
+				font-size: 2.6em;
+				&:hover, &:focus, &:active {
+					color: $white;
+				}
+			}
 		}
 		.page-background{
 			position: absolute;
@@ -128,6 +138,9 @@
 				font-family: $bold;
 				font-size: 1.1em;
 				margin: 20px 0 0;
+				@include breakpoint(mobile){
+					font-size: 0.8em;
+				}
 				a{
 					color: $white;
 					&:hover, &:focus, &:active {
@@ -140,6 +153,9 @@
 				font-size: 12px;
 				text-transform: uppercase;
 				margin: 0;
+				@include breakpoint(mobile){
+					font-size: 0.6em;
+				}
 			}
 		}
 	}
