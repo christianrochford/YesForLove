@@ -7,9 +7,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-{exp:channel:entries channel="designer" limit="1" url_title="{segment_1}" dynamic="no" disable="{gv_disable_all}"}
+{exp:channel:entries channel="designer" limit="1" disable="{gv_disable_all}"}
 <title>{title} | Yes For Love</title>
-<meta name="description" content="Ireland votes for marriage equality on May 22nd. Support the YES vote, download the {title} 'YES' image and use it as your profile picture.">
+<meta name="description" content="Ireland votes for marriage equality on May 22nd. Support the YES vote, download the 'YES' image and use it as your profile picture.">
 {/exp:channel:entries}
 <link rel="stylesheet" href="{site_url}css/yesforlove.css">
 <link rel="apple-touch-icon" sizes="57x57" href="http://yes-for-love.com/apple-touch-icon-57x57.png">
@@ -29,9 +29,11 @@
 <meta name="msapplication-TileImage" content="http://yes-for-love.com/mstile-144x144.png">
 <!--Open Graph-->
 <meta property="og:type" content="website">
+<meta property="og:title" content="Yes For Love">
+<meta property="og:description" content="Ireland votes for marriage equality on May 22nd. Support the YES vote, download the 'YES' image and use it as your profile picture.">
+<meta property="og:site_name" content="Yes For Love">
 <meta property="og:url" content="http://yes-for-love.com/">
-<meta property="og:site_name" content="Postroch">
-{exp:channel:entries channel="designer" limit="1" dynamic="no" orderby="random" disable="{gv_disable_all}"}
+{exp:channel:entries channel="designer" limit="1" disable="{gv_disable_all}"}
 <meta property="og:image" content="{yes_image}">
 {/exp:channel:entries}
 <script src="{site_url}js/modernizr.min.js"></script>
@@ -129,8 +131,10 @@
 		<ul>
 			<li><a href="about" class="nav-link">About</a></li>
 			<li><a href="creatives" class="nav-link">Creatives</a></li>
+			<li><a href="{site_url}love-list">View All</a></li>
 			<li><a href="contact" class="nav-link">Contact</a></li>
 			<li><a href="http://www.yesequality.ie/voting-info/" target="_blank">Register to Vote</a></li>
+			<li><a href="http://www.marriagequality.ie/donate/" target="_blank">Donate</a></li>
 			<li><a href="https://www.yesequality.ie/" target="_blank">Learn More</a></li>
 		</ul>
 	</nav>

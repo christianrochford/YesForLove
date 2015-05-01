@@ -52,3 +52,15 @@
 		}
 	}
 }
+
+#love-grid-wrapper #love-header {
+	position: fixed;
+	background: $red;
+	background: $red-opaque;
+	@include breakpoint(mobile-landscape){
+		height: 70px;
+	}
+}
+#love-grid-wrapper #love-header.clear {
+	background: transparent;
+}

@@ -101,7 +101,12 @@
 	}
 }
 
-
 .love-modal.open{
 	display: table-cell;
+}
+
+.love-list {
+	#love-menu, .love-modal {
+		position: fixed;
+	}
 }

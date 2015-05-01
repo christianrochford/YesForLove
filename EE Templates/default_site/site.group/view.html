@@ -10,32 +10,39 @@
 <title>Yes For Love</title>
 <meta name="description" content="Ireland votes for marriage equality on May 22nd. Support the YES vote, download one of our 'YES' images and use it as your profile picture.">
 <link rel="stylesheet" href="{site_url}css/yesforlove.css">
-<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
-<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
-<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="apple-touch-icon" sizes="57x57" href="http://yes-for-love.com/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="114x114" href="http://yes-for-love.com/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="72x72" href="http://yes-for-love.com/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="144x144" href="http://yes-for-love.com/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="60x60" href="http://yes-for-love.com/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="120x120" href="http://yes-for-love.com/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="76x76" href="http://yes-for-love.com/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="152x152" href="http://yes-for-love.com/apple-touch-icon-152x152.png">
+<link rel="icon" type="image/png" href="http://yes-for-love.com/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="http://yes-for-love.com/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="http://yes-for-love.com/favicon-32x32.png" sizes="32x32">
+<link rel="icon" href="favicon.ico" type="image/x-icon"> 
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 <meta name="msapplication-TileColor" content="#2d89ef">
-<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<meta name="msapplication-TileImage" content="http://yes-for-love.com/mstile-144x144.png">
 <!--Open Graph-->
 <meta property="og:type" content="website">
 <meta property="og:url" content="http://yes-for-love.com/">
-<meta property="og:site_name" content="Postroch">
+<meta property="og:site_name" content="Yes For Love">
 {exp:channel:entries channel="designer" limit="1" dynamic="no" orderby="random" disable="{gv_disable_all}"}
 <meta property="og:image" content="{yes_image}">
 {/exp:channel:entries}
+<meta property="og:title" content="Yes For Love">
+<meta property="og:description" content="Ireland votes for marriage equality on May 22nd. Support the YES vote, download the 'YES' image and use it as your profile picture.">
+
 <script src="{site_url}js/modernizr.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
-<body>
-
-<div id="love-wrapper">
+<body class="love-list">
+<div id="loading">
+	<img src="{site_url}/img/loading-bubbles.svg" alt="" />
+</div>
+<div id="love-grid-wrapper">
 	<div id="love-header">
 		<div id="header-wrap">
 			<a href="/" class="icon-logo" aria-hidden="true"></a>
@@ -43,46 +50,29 @@
 			<a href="#" class="icon-close-modal" aria-hidden="true"></a>
 		</div>
 	</div>
-	<div class="ajax-slider">
-	  <ul class="slides">
-	  {exp:channel:entries channel="Designer" limit="2" dynamic="no" disable="{gv_disable_all}"}
-		<li class="yes" style="background-color:#{background_color};">
+	<div id="love-grid">
+	  {exp:channel:entries channel="designer" limit="999" dynamic="no" orderby="random" disable="{gv_disable_all}"}
+		<div class="yeah">
 	    	<div class="yes-wrap">
 		    	<div class="top-shadow">
 		    		<div class="left-shadow"></div>
 		    		<div class="right-shadow"></div>
 		    	</div>
-	    		{exp:ce_img:pair src="{yes_image}"}
-				<img src="{made}" alt="Yes by {title}" width="1000" height="1000" />
+	    		{exp:ce_img:pair src="{yes_image}" width="500" height="500"}
+				<img src="{made}" alt="Yes by {title}" width="500" height="500" />
 				{/exp:ce_img:pair}
 	    		<div class="bottom-shadow">
 		    		<div class="left-shadow"></div>
 		    		<div class="right-shadow"></div>
 		    	</div>
-		    	<div class="icon-wrap">
-			      	<a href="{yes_image}" class="icon-download" aria-hidden="true" target="_blank"></a>
-				      <div id="love-link-wrap">
-				      	<div class="icon-share" aria-hidden="true">
-				      	  <span id="love-triangle"></span>
-					      <ul id="love-links">
-				      		<li class="love-link"><a href="https://www.facebook.com/sharer/sharer.php?u={page_url}" class="icon-facebook" aria-hidden="true" style="color:#{background_color};" target="_blank"></a></li>
-				      		<li class="love-link"><a href="https://twitter.com/home?status=YES%20for%20love%20{page_url}" class="icon-twitter" aria-hidden="true" style="color:#{background_color};" target="_blank"></a></li>
-				      		<li class="love-link"><a href="https://plus.google.com/share?url={page_url}" class="icon-googleplus" aria-hidden="true" style="color:#{background_color};" target="_blank"></a></li>
-				      		<li class="love-link"><a href="mailto:?&subject=YES for Love&body=I'm%20gonna%20vote%20YES%20for%20Love%20in%20the%20referendum%20on%20Marriage%20Equality%20on%20May%2022nd!%0A{page_url}" class="icon-mail" aria-hidden="true" style="color:#{background_color};"></a></li>
-				      	  </ul>
-				      	</div>
-				      </div>
-			      </div>
 	    	</div>
-	      <div class="love-creator">
-	      	<p class="details"><span class="title">'{if image_title}{image_title}{if:else}YES{/if}'</span> By {if website}<a href="{website}" target="_blank">{/if}{title}{if website}</a>{/if}</p>
-	      	<p class="vote-for-love">Vote Yes in the marriage equality bill on May 22nd</p>
+	      <div class="overbox">
+	      	<p class="details"><span class="title">'{if image_title}{image_title}{if:else}YES{/if}'</span> By <a href="{site_url}creatives/{url_title}">{title}</a></p>
+	      	<a href="{yes_image}" class="icon-download" aria-hidden="true" target="_blank"></a>
 	      </div>
-	    </li>
+	    </div>
 	    {/exp:channel:entries}
-	  </ul>
 	</div>
-	<p id="vote-for-love">Vote Yes in the marriage equality bill on May 22nd</p>
 </div>
 
 <div id="love-menu">
@@ -90,8 +80,10 @@
 		<ul>
 			<li><a href="about" class="nav-link">About</a></li>
 			<li><a href="creatives" class="nav-link">Creatives</a></li>
+			<li><a href="{site_url}love-list">View All</a></li>
 			<li><a href="contact" class="nav-link">Contact</a></li>
 			<li><a href="http://www.yesequality.ie/voting-info/" target="_blank">Register to Vote</a></li>
+			<li><a href="http://www.marriagequality.ie/donate/" target="_blank">Donate</a></li>
 			<li><a href="https://www.yesequality.ie/" target="_blank">Learn More</a></li>
 		</ul>
 	</nav>
@@ -118,6 +110,7 @@
 
 <div id="contact" class="love-modal">
 	<h2>Contact</h2><p class="underline"></p>
+	<p>Sadly we’re currently not accepting open submissions. If you have any feedback or would just like to say hi we’d be love to hear from you!</p>
 	{exp:freeform:form form_name="contact" required="name|email|message" return="site/thanks" inline_errors="yes"}
 		<input type="text" name="name" id="name" placeholder="Name" {if freeform:error:name}style="border-color:#e60039;"{/if} novalidate="novalidate">
 		<input type="email" name="email" id="email" placeholder="Email" {if freeform:error:email}style="border-color:#e60039;"{/if} novalidate="novalidate">
@@ -127,40 +120,6 @@
 </div>
 
 <script src="{site_url}js/yesforlove.min.js"></script>
-<script>
-	$(document).ready(function(){
-		$('.icon-logo').click(function(e){
-	      e.preventDefault();
-	      $('.icon-menu').removeClass('off');
-	      $('.icon-close-modal').removeClass('on');
-	      $('#love-menu').removeClass('on');
-	      $('.love-modal').removeClass('open');
-	    });
-	});
-</script>
-<script>
-
-$(document).ready(function($){
-
-  	$('.ajax-slider').flexslider({
-  		after: function(slider){
-  			//Load another slide and append it to the html
-  			var url= '{exp:channel:entries channel="Designer" limit="1" dynamic="no" disable="{gv_disable_all}"}{site_url}yes{/exp:channel:entries}'
-            $.get(url, function(data) {
-              $('.slides').append(data);
-            });
-
-            //Tell flexslider to add this as a slide
-            slider.addSlide('.yes', 1); 
-  		}
-	});
-
-	$('.flex-next').click(function(){
-		console.log('Hey');
-		$('.ajax-slider').flexslider();
-	});
-});
-</script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

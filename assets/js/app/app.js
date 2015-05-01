@@ -9,6 +9,7 @@ $(document).ready(function() {
   $('#love-menu').css({height: winH});
   $('.icon-menu').click(function(e){
   	e.preventDefault();
+    $('#love-header').addClass('clear');
   	$(this).addClass('off');
   	$('.icon-close-modal').addClass('on');
     $('.love-modal').removeClass('open');
@@ -17,6 +18,7 @@ $(document).ready(function() {
   $('.icon-close-modal').click(function(e){
   	e.preventDefault();
   	$(this).removeClass('on');
+    $('#love-header').removeClass('clear');
   	$('.icon-menu').removeClass('off');
   	$('#love-menu').removeClass('on');
     $('.love-modal').removeClass('open');
@@ -57,6 +59,10 @@ $(document).ready(function() {
         $('#love-links, #love-triangle').addClass('on');
       }
     });
+    $('.yeah').click(function(){
+      $('.overbox').removeClass('on');
+      $(this).find('.overbox').addClass('on');
+    });
   } else {
     $('.icon-share').hover(
       function(){
@@ -68,7 +74,18 @@ $(document).ready(function() {
         $('#love-links, #love-triangle').removeClass('on');
       }
     );
+    $('.yeah').hover(
+      function(){
+        $(this).find('.overbox').addClass('on');
+      },
+      function(){
+        $(this).find('.overbox').removeClass('on');
+      }
+    );
   }
+
+  // Love List Match Heights
+  $('#love-grid .yes-wrap').matchHeight();
 
 });
 
@@ -76,7 +93,7 @@ $(window).load(function(){
 
   $('#loading').hide();
     // The Love Slider
-    $('.flexslider, .ajax-slider').fadeIn(200);
+    $('.flexslider, .yeah').fadeIn(200);
   $('.flexslider').flexslider();
 
   var winH = $(window).height();

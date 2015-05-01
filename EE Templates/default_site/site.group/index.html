@@ -28,16 +28,19 @@
 <!--Open Graph-->
 <meta property="og:type" content="website">
 <meta property="og:url" content="http://yes-for-love.com/">
-<meta property="og:site_name" content="Postroch">
+<meta property="og:site_name" content="Yes For Love">
 {exp:channel:entries channel="designer" limit="1" dynamic="no" orderby="random" disable="{gv_disable_all}"}
 <meta property="og:image" content="{yes_image}">
 {/exp:channel:entries}
+<meta property="og:title" content="Yes For Love">
+<meta property="og:description" content="Ireland votes for marriage equality on May 22nd. Support the YES vote, download the 'YES' image and use it as your profile picture.">
+
 <script src="{site_url}js/modernizr.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
 <div id="loading">
-	<img src="{site_url}/img/loading-bubbles.svg" alt="Loading icon" />
+	<img src="{site_url}/img/loading-bubbles.svg" alt="" />
 </div>
 <div id="love-wrapper">
 	<div id="love-header">
@@ -94,8 +97,10 @@
 		<ul>
 			<li><a href="about" class="nav-link">About</a></li>
 			<li><a href="creatives" class="nav-link">Creatives</a></li>
+			<li><a href="{site_url}love-list">View All</a></li>
 			<li><a href="contact" class="nav-link">Contact</a></li>
 			<li><a href="http://www.yesequality.ie/voting-info/" target="_blank">Register to Vote</a></li>
+			<li><a href="http://www.marriagequality.ie/donate/" target="_blank">Donate</a></li>
 			<li><a href="https://www.yesequality.ie/" target="_blank">Learn More</a></li>
 		</ul>
 	</nav>

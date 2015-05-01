@@ -2,6 +2,7 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
+	z-index: 1000;
 }
 #love-wrapper{
 	background: $red;
@@ -10,7 +11,7 @@
 	width: 100%;
 	overflow: hidden;
 
-	.flexslider, .ajax-slider{
+	.flexslider{
 		display: none;
 		width: 100%;
 		height: 100%;
